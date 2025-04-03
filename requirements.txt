@@ -1,0 +1,7 @@
+asgiref==3.8.1
+crispy-bootstrap5==2025.4
+Django==5.2
+django-crispy-forms==2.3
+PyMuPDF==1.25.5
+PyPDF2==3.0.1
+sqlparse==0.5.3
