@@ -1,0 +1,23 @@
+{% extends 'splitter/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Upload PDF{% endblock %}
+
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="text-center">Upload a Combined PDF to Split</h2>
+            <p class="text-center">Upload a PDF file that contains multiple sections separated by "Page 1 of X" headers.</p>
+            <p class="text-center">Each section will be saved as a separate PDF file.</p>
+            <form method="post" enctype="multipart/form-data" class="mt-4">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-primary w-100">Upload & Split</button>
+            </form>
+
+            {% if error %}
+            <div class="alert alert-danger mt-3">{{ error }}</div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

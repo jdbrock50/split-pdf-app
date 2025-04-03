@@ -1,0 +1,23 @@
+{% extends 'splitter/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Split Results{% endblock %}
+
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="text-center">Download Split PDFs</h2>
+            <ul class="list-group mt-3">
+                {% for file in split_files %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span>{{ file|slice:"6:" }}</span>
+                        <a href="/{{ file }}" class="btn btn-success btn-sm" target="_blank">Download</a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <div class="text-center mt-4">
+                <a href="{% url 'upload_pdf' %}" class="btn btn-secondary">Upload Another PDF</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
