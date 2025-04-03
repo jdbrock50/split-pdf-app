@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-gr7v#shv1hl8aa%q5nm1=e^wg1e80_361m_&bv2(*rmfdb1y4u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['split-pdf-app.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
